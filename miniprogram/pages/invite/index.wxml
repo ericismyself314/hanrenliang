@@ -1,0 +1,1 @@
+<view class="container center"><view class="h2">看看你有多像人</view><button class="btn btn-primary" bindtap="goHome">测测你的含人量</button></view>

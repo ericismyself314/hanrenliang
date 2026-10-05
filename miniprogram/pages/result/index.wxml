@@ -1,0 +1,131 @@
+<view class="container result-page" wx:if="{{ready && !sharedMode}}">
+  <view class="result-hero card center">
+    <image class="avatar-image" wx:if="{{!avatarFailed}}" src="{{avatarPath}}" mode="aspectFit" binderror="onAvatarError" />
+    <view class="avatar-retry" wx:else bindtap="retryAvatar">人物图片没加载出来，点此重试</view>
+    <view class="species-line">
+      <view class="species-label">鉴定完毕，你是</view>
+      <view class="species-name">{{title}}</view>
+    </view>
+
+    <view class="gauge">
+    <view class="gauge-label">{{indexLabel}}</view>
+    <view class="gauge-num mono">{{score}}<text class="gauge-pct">%</text></view>
+    <view class="gauge-track">
+      <view class="gauge-fill" style="width:{{score}}%"></view>
+    </view>
+    <view class="gauge-scale">
+      <text>0</text>
+      <text>{{bandStatus}}</text>
+      <text>100</text>
+    </view>
+    </view>
+
+    <view class="portrait-verdict hero-verdict">{{verdict}}</view>
+
+  </view>
+
+  <view class="block">
+    <view class="block-head">
+      <text class="block-no mono">01</text>
+      <text class="block-title">含人量画像</text>
+    </view>
+    <view class="prose">{{portrait}}</view>
+  </view>
+
+  <view class="block hexagon-card">
+    <view class="block-head">
+      <text class="block-no mono">02</text>
+      <text class="block-title">六维状态</text>
+    </view>
+    <canvas type="2d" id="radar" class="radar"></canvas>
+  </view>
+
+  <view class="block">
+    <view class="block-head">
+      <text class="block-no mono">03</text>
+      <text class="block-title">你的状态拆解</text>
+    </view>
+    <view class="insight-card insight-positive">
+      <view class="cell-t">你仍然像人的地方</view>
+      <view class="cell-p">{{humanSide}}</view>
+    </view>
+    <view class="insight-card insight-watch">
+      <view class="cell-t warn">正在掉线的部分</view>
+      <view class="cell-p">{{offlineSignal}}</view>
+    </view>
+  </view>
+
+  <view class="block">
+    <view class="block-head">
+      <text class="block-no mono">04</text>
+      <text class="block-title">最佳搭子</text>
+    </view>
+    <view class="panel">
+      <view class="panel-big">{{bestPartner}}</view>
+      <view class="muted">想到谁了？把结果发给TA，看看TA是不是真长这样。</view>
+    </view>
+  </view>
+
+  <view class="result-actions">
+    <view class="result-bridge">
+      <view class="bridge-title">看看你的朋友还有人类吗？</view>
+      <view class="bridge-copy">我已经测完了，现在轮到你。</view>
+    </view>
+
+    <view class="timeline-preview">
+      <view class="timeline-preview-title">朋友圈配图预览</view>
+      <view class="timeline-preview-stage">
+        <view class="timeline-native-preview">
+          <image class="timeline-native-avatar" wx:if="{{!previewAvatarFailed}}" src="{{avatarPath}}" mode="aspectFit" binderror="onPreviewAvatarError" />
+          <view class="avatar-retry" wx:else bindtap="retryAvatar">点此重新加载人物</view>
+          <view class="timeline-native-title">{{title}}</view>
+          <view class="timeline-native-label">我的含人量</view>
+          <view class="timeline-native-score mono">{{score}}%</view>
+          <view class="timeline-native-verdict">{{verdict}}</view>
+          <view class="timeline-native-footer">看看你有多像人</view>
+        </view>
+      </view>
+    </view>
+
+    <button class="btn btn-signal btn-block-gap" bindtap="shareTimeline" loading="{{sharingImage}}" disabled="{{sharingImage}}">{{sharingImage ? '正在准备图片' : '分享图片到朋友圈'}}</button>
+    <button class="btn btn-quiet btn-block-gap" open-type="share">发给微信好友</button>
+    <view class="share-hint">点上方按钮会打开微信图片分享面板，再选择朋友圈发布。发给好友可直接打开你这次的结果。</view>
+    <view class="share-status" wx:if="{{shareStatus}}">{{shareStatus}}</view>
+  </view>
+
+  <view class="footer-note">{{disclaimer}}</view>
+
+  <view class="brand">
+    <view class="brand-w">{{brandWord}}</view>
+    <view class="brand-e">{{brandEn}}</view>
+  </view>
+</view>
+
+<view class="container result-page center" wx:elif="{{sharedMode}}">
+  <view class="result-hero card center">
+    <image class="avatar-image" wx:if="{{!avatarFailed}}" src="{{avatarPath}}" mode="aspectFit" binderror="onAvatarError" />
+    <view class="avatar-retry" wx:else bindtap="retryAvatar">人物图片没加载出来，点此重试</view>
+    <view class="species-label">朋友的检测结果</view>
+    <view class="species-name">{{title}}</view>
+    <view class="gauge-label">含人量</view>
+    <view class="gauge-num mono">{{score}}<text class="gauge-pct">%</text></view>
+  </view>
+  <view class="lead">TA已经测完了，看看你还有多少含人量。</view>
+  <button class="btn btn-primary btn-block-gap" bindtap="goTest">测测我的含人量 →</button>
+</view>
+<view class="container center" wx:else>
+  <view class="h2">还没有检测结果</view>
+  <view class="lead">先做完这套题，结果会保存在这台手机上。</view>
+  <button class="btn btn-primary" style="margin-top:48rpx" bindtap="goTest">开始鉴定</button>
+  <view class="footer-note">{{disclaimer}}</view>
+</view>
+<view class="share-render-host" aria-hidden="true"><canvas type="2d" id="shareCard" class="export-canvas"></canvas><canvas type="2d" id="timelineCard" class="export-canvas"></canvas></view>
+<view class="timeline-guide" wx:if="{{showTimelineGuide}}" catchtap="closeTimelineGuide">
+  <view class="timeline-guide-card">
+    <view class="timeline-guide-arrow">↗</view>
+    <view class="h3">点右上角 ···</view>
+    <view>再选「分享到朋友圈」</view>
+    <view class="muted">会带上你的含人量和称号，朋友点开就能测。</view>
+    <view class="guide-dismiss">知道了，点这里收起</view>
+  </view>
+</view>

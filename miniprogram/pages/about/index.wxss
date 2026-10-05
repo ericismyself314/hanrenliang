@@ -1,0 +1,52 @@
+.dim-row {
+  display: flex;
+  padding: 16rpx 0;
+  border-bottom: 1rpx solid rgba(21, 21, 21, 0.08);
+}
+
+.dim-row:last-child {
+  border-bottom: none;
+}
+
+.dim-code {
+  width: 48rpx;
+  height: 48rpx;
+  border-radius: 50%;
+  border: 1rpx solid #151515;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24rpx;
+  flex-shrink: 0;
+  margin-right: 20rpx;
+}
+
+.dim-name {
+  font-size: 28rpx;
+  font-weight: 500;
+}
+
+.dim-measure {
+  font-size: 25rpx;
+  color: rgba(21, 21, 21, 0.6);
+  margin-top: 4rpx;
+}
+
+.dim-code {
+  border-color: #16233d;
+  background: #e4ecf8;
+}
+
+.filing-number {
+  color: #16233d;
+  font-size: 29rpx;
+  font-weight: 600;
+  margin-bottom: 10rpx;
+  word-break: break-all;
+}
+
+.filing-query {
+  height: 72rpx;
+  font-size: 25rpx;
+  margin-top: 18rpx;
+}

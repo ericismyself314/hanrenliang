@@ -1,0 +1,20 @@
+<view class="container home-page">
+  <view class="home-kicker">一场关于你的生活小测试</view>
+  <view class="h1">看看你<br />有多像人</view>
+  <view class="lead">测测你的含人量，看看你现在有多像人。</view>
+  <view class="ai-hero" aria-label="正在接受人类状态鉴定">
+    <image src="/assets/home-human-v5.png" mode="aspectFit" />
+  </view>
+  <view class="card-flat shared-preview" wx:if="{{sharedMode}}">
+    <view class="card-title">朋友的检测结果</view>
+    <image style="width:180rpx;height:180rpx" src="{{sharedAvatar}}" mode="aspectFit" />
+    <view class="shared-score mono">{{sharedScore}}% · {{sharedTitle}}</view>
+    <view class="muted">TA已经测完了，看看你还有多少含人量。</view>
+  </view>
+  <view class="home-last" wx:if="{{hasLocalResult}}">
+    <view class="row-between"><text class="muted">你上次的结果</text><text class="mono">{{localScore}}% · {{localTitle}}</text></view>
+  </view>
+  <button class="btn btn-primary home-start" bindtap="startTest">测测你的含人量 →</button>
+  <button class="btn btn-ghost btn-block-gap" wx:if="{{hasLocalResult}}" bindtap="goMyResult">再看我的结果</button>
+  <view class="home-about" bindtap="goAbout">关于含人量 · 隐私与备案</view>
+</view>

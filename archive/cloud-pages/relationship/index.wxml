@@ -1,0 +1,69 @@
+<view class="container">
+  <view class="station-line">
+    <view class="dot"></view>
+    <text>DUO REPORT / 双人关系报告</text>
+    <view class="rule"></view>
+  </view>
+
+  <view wx:if="{{loading}}" class="loading">
+    <text>正在读取双方快照…</text>
+  </view>
+
+  <block wx:if="{{!loading && !errorMessage}}">
+    <view class="card center">
+      <view class="pill">好友玩法分 · 仅供娱乐</view>
+      <view class="score-hero">
+        <text class="num mono">{{compatibilityScore}}</text>
+      </view>
+      <view class="rel-name">{{relationshipName}}</view>
+      <view class="rel-verdict">{{verdict}}</view>
+    </view>
+
+    <view class="duo">
+      <view class="duo-card">
+        <image class="avatar-mini-image" src="{{inviterAvatarPath}}" mode="aspectFit" />
+        <view class="role">发起人</view>
+        <view class="title">{{inviterTitle}}</view>
+        <view class="score mono">{{inviterScore}}%</view>
+      </view>
+      <view class="duo-card">
+        <image class="avatar-mini-image" src="{{inviteeAvatarPath}}" mode="aspectFit" />
+        <view class="role">被邀请的人</view>
+        <view class="title">{{inviteeTitle}}</view>
+        <view class="score mono">{{inviteeScore}}%</view>
+      </view>
+    </view>
+
+    <view class="card">
+      <view class="card-title">共同优势</view>
+      <view class="list-item" wx:for="{{sharedStrengths}}" wx:key="*this">
+        <view class="bullet"></view>
+        <text>{{item}}</text>
+      </view>
+    </view>
+
+    <view class="card">
+      <view class="card-title">共同短板</view>
+      <view class="list-item" wx:for="{{sharedGaps}}" wx:key="*this">
+        <view class="bullet"></view>
+        <text>{{item}}</text>
+      </view>
+    </view>
+
+    <button class="btn btn-signal" open-type="share">发给好友</button>
+    <view class="text-action" bindtap="copyTimeline">复制朋友圈文案</view>
+    <view class="share-status" wx:if="{{shareStatus}}">{{shareStatus}}</view>
+    <button class="btn btn-ghost btn-block-gap" bindtap="goInvite">再拉一个人进来</button>
+
+    <view class="footer-note">{{disclaimer}}</view>
+  </block>
+
+  <block wx:if="{{!loading && errorMessage}}">
+    <view class="error-box">
+      <view class="h3">没读到关系报告</view>
+      <view class="muted">{{errorMessage}}</view>
+    </view>
+    <button class="btn btn-primary" bindtap="retry">重新读取</button>
+    <button class="btn btn-ghost btn-block-gap" bindtap="goInvite">去邀请一个朋友</button>
+  </block>
+</view>

@@ -1,0 +1,54 @@
+<view class="container">
+  <view class="station-line">
+    <view class="dot"></view>
+    <text>ABOUT / 这是什么</text>
+    <view class="rule"></view>
+  </view>
+
+  <view class="h2">{{productName}}是什么</view>
+  <view class="card">
+    <text>{{definition}}</text>
+  </view>
+
+  <view class="card">
+    <view class="card-title">六个隐藏维度</view>
+    <view class="dim-row" wx:for="{{dimensions}}" wx:key="code">
+      <view class="dim-code">{{item.code}}</view>
+      <view>
+        <view class="dim-name">{{item.name}}</view>
+        <view class="dim-measure">{{item.measure}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="card">
+    <view class="card-title">它不是什么</view>
+    <view class="muted">含人量高不等于外向、朋友多、每天出去玩或不使用AI。</view>
+    <view class="muted">含人量低不等于性格差、懒惰、失败或需要被纠正。</view>
+    <view class="muted">它测的是近期状态，不是永久人格；考试周、假期和开学季可能得到不同结果。</view>
+  </view>
+
+  <view class="error-box">
+    <view class="h3">娱乐说明</view>
+    <view class="muted">{{disclaimer}}</view>
+  </view>
+
+  <view class="card">
+    <view class="card-title">关于隐私</view>
+    <view class="muted">不要求登录，不读取微信头像、昵称或手机号。</view>
+    <view class="muted">完整答题选项和个人结果保存在当前设备。</view>
+      <view class="muted">答题和计分在手机上完成，不上传答案或使用事件。主动分享时，卡片会展示你的含人量和结果称号；朋友打开后可以独立测试。</view>
+
+  </view>
+
+  <view class="card" wx:if="{{filingNumber}}">
+    <view class="card-title">备案信息</view>
+    <view class="filing-number">{{filingNumber}}</view>
+    <view class="muted">可在工业和信息化部备案管理系统查询。</view>
+    <button class="btn btn-ghost filing-query" bindtap="copyFilingQueryUrl">复制备案查询网址</button>
+  </view>
+
+  <view class="muted">内容版本 {{version}}</view>
+
+  <button class="btn btn-primary btn-block-gap" bindtap="goHome">回到首页</button>
+</view>

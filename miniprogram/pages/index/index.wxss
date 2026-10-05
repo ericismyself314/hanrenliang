@@ -1,0 +1,124 @@
+.mono {
+  font-size: 24rpx;
+  word-break: break-all;
+  max-width: 60%;
+  text-align: right;
+}
+
+.shared-preview {
+  background: #ffffff;
+  border: 1rpx solid rgba(21, 21, 21, 0.12);
+}
+
+.shared-score {
+  font-size: 34rpx;
+  font-weight: 600;
+  margin-bottom: 8rpx;
+}
+
+.home-page {
+  text-align: center;
+  padding-top: 96rpx;
+}
+
+.home-kicker {
+  display: inline-block;
+  padding: 8rpx 14rpx;
+  color: #16233d;
+  background: #62e6d2;
+  border-radius: 999rpx;
+  font-size: 22rpx;
+  letter-spacing: 2rpx;
+}
+
+.home-page .h1 {
+  margin-top: 28rpx;
+  font-size: 46rpx;
+  line-height: 1.28;
+  letter-spacing: -1rpx;
+}
+
+.home-page .lead {
+  max-width: 560rpx;
+  margin: 24rpx auto 0;
+  font-size: 30rpx;
+  line-height: 1.6;
+  color: rgba(22, 35, 61, 0.72);
+}
+
+.home-start {
+  max-width: 600rpx;
+  margin: 56rpx auto 0;
+}
+
+.home-last {
+  max-width: 600rpx;
+  margin: 30rpx auto 0;
+  padding: 18rpx 0;
+  border-top: 1rpx solid rgba(22, 35, 61, 0.1);
+  border-bottom: 1rpx solid rgba(22, 35, 61, 0.1);
+}
+
+.home-about {
+  margin-top: 34rpx;
+  color: rgba(22, 35, 61, 0.6);
+  font-size: 25rpx;
+  text-align: center;
+}
+
+.home-about text {
+  margin-left: 8rpx;
+  color: #5d55b8;
+  font-size: 32rpx;
+  vertical-align: -2rpx;
+}
+
+.home-meta {
+  margin-top: 72rpx;
+  color: rgba(22, 35, 61, 0.4);
+  font-size: 22rpx;
+  letter-spacing: 1rpx;
+  text-align: center;
+}
+
+.invite-title,
+.invite-lead {
+  text-align: left;
+}
+
+.invite-species {
+  font-weight: 600;
+}
+
+/* 物种鉴定卡视觉 */
+
+.h1 { font-size: 88rpx; font-weight: 800; line-height: 1.16; letter-spacing: -3rpx; }
+.home-kicker { background: #e2eee7; color: #3e6456; }
+.specimen-stage { position: relative; height: 440rpx; margin-top: 24rpx; }
+.stage-orbit { position: absolute; left: 6%; right: 6%; bottom: 64rpx; height: 160rpx; border: 2rpx dashed #b8cfc2; border-radius: 50%; background: #e6eee4; transform: rotate(-7deg); }
+.specimen { position: absolute; bottom: 112rpx; width: 31%; display: flex; flex-direction: column; align-items: center; }
+.specimen image { width: 100%; height: 245rpx; }
+.specimen text { font-size: 20rpx; padding: 6rpx 12rpx; border-radius: 10rpx; background: #fffdf7; border: 1rpx solid #dce1d8; white-space: nowrap; }
+.side-left { left: 0; transform: rotate(-9deg); }
+.main-specimen { left: 34%; z-index: 2; bottom: 96rpx; }
+.main-specimen image { height: 310rpx; }
+.main-specimen text { background: #233b36; color: white; }
+.side-right { right: 0; transform: rotate(9deg); }
+.stage-caption { position: absolute; bottom: 8rpx; left: 0; right: 0; text-align: center; font-size: 22rpx; color: #69796f; }
+.home-kicker { background: transparent; letter-spacing: 3rpx; }
+.mystery-seal { width: 410rpx; height: 410rpx; margin: 60rpx auto; display: flex; flex-direction: column; justify-content: center; align-items: center; border-radius: 50%; background: radial-gradient(circle at 35% 25%, #f7fff8, #d6eee0); border: 2rpx solid #bbd5c7; box-shadow: 0 0 0 20rpx #edf2e9; transform: rotate(-5deg); }
+.seal-caption { color: #416b59; font-size: 24rpx; letter-spacing: 6rpx; }
+.seal-value { font-size: 160rpx; line-height: 1.3; color: #234538; }
+.seal-value text { font-size: 48rpx; }
+.seal-note { color: #547763; font-size: 22rpx; letter-spacing: 3rpx; }
+.home-page .h1 { font-size: 84rpx; line-height: 1.12; letter-spacing: -3rpx; }
+.home-page .home-kicker { display: inline-flex; align-items: center; gap: 12rpx; color: #547463; letter-spacing: 4rpx; }
+.home-page .home-kicker::before { content: ''; width: 12rpx; height: 12rpx; border-radius: 50%; background: #73d4b3; box-shadow: 0 0 0 8rpx #e0f1e9; }
+.home-page .h1 { margin-top: 36rpx; }
+.home-page .h1 u { background: linear-gradient(transparent 70%, #bdebd9 70%); padding: 0 6rpx 4rpx; }
+.home-page .lead { font-size: 25rpx; color: #64716b; }
+.ai-hero { position: relative; width: 588rpx; height: 608rpx; margin: 20rpx auto 0; }
+.ai-hero::before { content: ''; position: absolute; left: 50%; top: 60rpx; width: 450rpx; height: 450rpx; margin-left: -225rpx; border-radius: 50%; background: radial-gradient(circle, #e5eee5 0%, #edf2eb 62%, rgba(237,242,235,0) 100%); }
+.ai-hero::after { content: ''; position: absolute; left: 136rpx; right: 136rpx; bottom: 44rpx; height: 28rpx; border-radius: 50%; background: rgba(48,75,54,.10); filter: blur(12rpx); }
+.ai-hero image { position: absolute; left: 50%; top: 0; width: 488rpx; height: 600rpx; transform: translateX(-50%); display: block; filter: drop-shadow(0 24rpx 16rpx rgba(48,75,54,.08)); z-index: 2; }
+.home-start { margin-top: 8rpx; background: #283d35; }

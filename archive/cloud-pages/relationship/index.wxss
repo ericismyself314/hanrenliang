@@ -1,0 +1,122 @@
+.duo {
+  display: flex;
+  align-items: stretch;
+  gap: 20rpx;
+}
+
+.duo-card {
+  flex: 1;
+  background: #ffffff;
+  border: 1rpx solid rgba(21, 21, 21, 0.12);
+  border-radius: 20rpx;
+  padding: 28rpx 24rpx;
+}
+
+.avatar-mini-image {
+  display: block;
+  width: 132rpx;
+  height: 132rpx;
+  margin: 0 auto 12rpx;
+}
+
+.duo-card .role {
+  font-size: 22rpx;
+  letter-spacing: 2rpx;
+  color: rgba(21, 21, 21, 0.45);
+}
+
+.duo-card .title {
+  font-size: 32rpx;
+  font-weight: 600;
+  margin-top: 12rpx;
+}
+
+.duo-card .score {
+  margin-top: 8rpx;
+  font-size: 44rpx;
+  font-weight: 600;
+  color: #151515;
+}
+
+.score-hero {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 8rpx;
+}
+
+.score-hero .num {
+  font-size: 88rpx;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.score-hero .unit {
+  font-size: 32rpx;
+  color: rgba(21, 21, 21, 0.5);
+}
+
+.rel-name {
+  margin-top: 20rpx;
+  font-size: 40rpx;
+  font-weight: 600;
+  text-align: center;
+}
+
+.rel-verdict {
+  margin-top: 12rpx;
+  font-size: 28rpx;
+  color: rgba(21, 21, 21, 0.72);
+  text-align: center;
+}
+
+.pill {
+  display: inline-block;
+  background: #b7f34a;
+  border: 1rpx solid #151515;
+  border-radius: 999rpx;
+  padding: 6rpx 20rpx;
+  font-size: 24rpx;
+  margin-bottom: 16rpx;
+}
+
+.list-item {
+  display: flex;
+  align-items: flex-start;
+  font-size: 28rpx;
+  line-height: 1.65;
+  margin-bottom: 12rpx;
+}
+
+.list-item:last-child {
+  margin-bottom: 0;
+}
+
+.list-item .bullet {
+  width: 12rpx;
+  height: 12rpx;
+  border-radius: 50%;
+  background: #151515;
+  margin: 16rpx 16rpx 0 0;
+  flex-shrink: 0;
+}
+
+.loading {
+  padding: 120rpx 0;
+  text-align: center;
+  color: rgba(21, 21, 21, 0.45);
+}
+
+.duo-card {
+  border-color: rgba(22, 35, 61, 0.1);
+  box-shadow: 0 10rpx 24rpx rgba(42, 64, 102, 0.06);
+}
+
+.pill {
+  background: #62e6d2;
+  border-color: #16233d;
+}
+
+.list-item .bullet {
+  background: #9c8cff;
+}

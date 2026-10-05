@@ -1,0 +1,70 @@
+<view class="container">
+
+  <block wx:if="{{!ready}}">
+    <view class="h2">先测一次才能邀请别人</view>
+    <view class="lead">生成邀请需要用到你的检测结果，整个过程不需要登录。</view>
+    <button class="btn btn-primary" style="margin-top:48rpx" bindtap="goTest">开始鉴定</button>
+  </block>
+
+  <block wx:elif="{{token}}">
+    <view class="station-line">
+      <view class="dot"></view>
+      <text>邀请已生成 · 可直接转发</text>
+      <view class="rule"></view>
+    </view>
+
+    <view class="h2 invite-share-title">等TA来揭晓你们是什么组合</view>
+
+    <view class="card preview">
+      <view class="card-title">好友会看到</view>
+      <view class="preview-title">{{shareTitle}}</view>
+      <view class="preview-desc">{{shareText}}</view>
+    </view>
+
+    <button class="btn btn-signal" open-type="share">发给TA，开始双人鉴定</button>
+    <button class="btn btn-ghost btn-block-gap" bindtap="copyText">复制好友文案</button>
+    <button class="btn btn-ghost btn-block-gap" bindtap="copyTimeline">复制朋友圈文案</button>
+    <view class="share-status" wx:if="{{shareStatus}}">{{shareStatus}}</view>
+    <button class="btn btn-ghost btn-block-gap" bindtap="goRelationship">查看双人关系报告</button>
+    <button class="btn btn-ghost btn-block-gap" bindtap="createAnother">再生成一个邀请</button>
+
+    <view class="footer-note">TA测完后，你们就能一起看专属双人关系报告。</view>
+  </block>
+
+  <block wx:else>
+    <view class="h2">找个人，看看你俩是什么组合</view>
+    <view class="lead">你是{{myScore}}%的{{myTitle}}。选一个你最怀疑的人，TA测完就能解锁双人关系报告。</view>
+
+    <view class="card">
+      <view class="card-title">邀请里怎么称呼你（可不填）</view>
+      <input
+        class="input"
+        placeholder="我"
+        maxlength="12"
+        value="{{alias}}"
+        bindinput="onAliasInput"
+        placeholder-class="input-placeholder"
+      />
+    </view>
+
+    <view class="card">
+      <view class="card-title">我猜你是……</view>
+      <picker mode="selector" range="{{speciesNames}}" value="{{speciesIndex}}" bindchange="onSpeciesChange">
+        <view class="picker">
+          <text>{{speciesNames[speciesIndex]}}</text>
+          <text class="picker-arrow">›</text>
+        </view>
+      </picker>
+    </view>
+
+    <view class="error-box" wx:if="{{errorMessage}}">
+      <text class="warn">{{errorMessage}}</text>
+    </view>
+
+    <button class="btn btn-primary" bindtap="create" disabled="{{creating}}">
+      {{creating ? '正在生成…' : '生成专属邀请'}}
+    </button>
+
+    <view class="footer-note">不读取头像和昵称，称呼只是你随手填的一个词。</view>
+  </block>
+</view>

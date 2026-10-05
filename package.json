@@ -1,0 +1,22 @@
+{
+  "name": "hanrenliang-miniprogram",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "description": "含人量 - 面向 18-24 岁大学生的轻量校园社交测试微信小程序（第一代）",
+  "scripts": {
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "lint:pages": "node scripts/check-pages.js",
+    "lint:cloud": "node scripts/check-cloudfunctions.js",
+    "test": "tsc -p tsconfig.test.json && node .test-dist/tests/run.js",
+    "build:demo": "node scripts/build-demo.js",
+    "smoke:demo": "node scripts/smoke-demo.js",
+    "check": "npm run typecheck && npm run lint:pages && npm run lint:release && npm run lint:cloud && npm run test",
+    "lint:release": "node scripts/check-no-cloud.js"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "@types/wechat-miniprogram": "^3.4.10",
+    "typescript": "^5.0.0"
+  }
+}

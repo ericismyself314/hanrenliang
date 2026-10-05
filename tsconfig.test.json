@@ -1,0 +1,19 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": false,
+    "outDir": ".test-dist",
+    "types": ["node", "wechat-miniprogram"]
+  },
+  "include": [
+    "tests/**/*.ts",
+    "miniprogram/config/**/*.ts",
+    "miniprogram/utils/types.ts",
+    "miniprogram/utils/scoring.ts",
+    "miniprogram/utils/matching.ts",
+    "miniprogram/utils/result.ts",
+    "miniprogram/utils/inviteCore.ts",
+    "miniprogram/utils/storage.ts",
+    "miniprogram/utils/backend.ts"
+  ]
+}

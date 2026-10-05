@@ -1,0 +1,61 @@
+.input {
+  height: 88rpx;
+  border-bottom: 1rpx solid rgba(22, 35, 61, 0.18);
+  font-size: 32rpx;
+}
+
+.input-placeholder {
+  color: rgba(22, 35, 61, 0.3);
+}
+
+.picker {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 88rpx;
+  border-bottom: 1rpx solid rgba(22, 35, 61, 0.18);
+  font-size: 32rpx;
+}
+
+.picker-arrow {
+  color: rgba(22, 35, 61, 0.35);
+  font-size: 40rpx;
+}
+
+.preview {
+  background: linear-gradient(145deg, #16233d, #283b65);
+  border-color: #16233d;
+  color: #f3f6fb;
+}
+
+.invite-share-title {
+  margin: 38rpx 0 20rpx;
+}
+
+.preview .card-title {
+  color: rgba(243, 246, 251, 0.56);
+}
+
+.preview-title {
+  font-size: 34rpx;
+  font-weight: 500;
+  margin-bottom: 12rpx;
+}
+
+.preview-desc {
+  font-size: 27rpx;
+  line-height: 1.6;
+  color: rgba(243, 246, 251, 0.82);
+}
+
+.token {
+  font-size: 24rpx;
+  word-break: break-all;
+}
+
+.share-status {
+  padding: 12rpx 0 2rpx;
+  text-align: center;
+  color: #5d55b8;
+  font-size: 23rpx;
+}

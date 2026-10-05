@@ -1,0 +1,104 @@
+{
+  "description": "含人量 · 大学生轻量社交测试（第一代）",
+  "compileType": "miniprogram",
+  "appid": "touristappid",
+  "projectname": "hanrenliang",
+  "miniprogramRoot": "miniprogram/",
+  "libVersion": "3.17.3",
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "enhance": true,
+    "postcss": true,
+    "minified": true,
+    "coverView": true,
+    "lazyloadPlaceholderEnable": false,
+    "preloadBackgroundData": false,
+    "autoAudits": false,
+    "uglifyFileName": false,
+    "uploadWithSourceMap": true,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "useCompilerPlugins": [
+      "typescript"
+    ],
+    "compileWorklet": false,
+    "minifyWXSS": true,
+    "minifyWXML": true,
+    "localPlugins": false,
+    "disableUseStrict": false,
+    "condition": false
+  },
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "首页",
+          "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "答题页",
+          "pathName": "pages/test/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "个人结果页",
+          "pathName": "pages/result/index",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  },
+  "simulatorPluginLibVersion": {},
+  "packOptions": {
+    "ignore": [
+      {
+        "type": "file",
+        "value": "utils/backend.ts"
+      },
+      {
+        "type": "file",
+        "value": "utils/inviteCore.ts"
+      },
+      {
+        "type": "file",
+        "value": "utils/matching.ts"
+      },
+      {
+        "type": "file",
+        "value": "config/relationships.ts"
+      },
+      {
+        "type": "file",
+        "value": "utils/backend.js"
+      },
+      {
+        "type": "file",
+        "value": "utils/inviteCore.js"
+      },
+      {
+        "type": "file",
+        "value": "utils/matching.js"
+      },
+      {
+        "type": "file",
+        "value": "config/relationships.js"
+      },
+      {
+        "type": "suffix",
+        "value": ".webp"
+      }
+    ],
+    "include": []
+  },
+  "editorSetting": {}
+}
